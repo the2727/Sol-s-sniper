@@ -16,7 +16,7 @@ Choose the appropriate version for your system:
 Execute `install.bat` to set up the project.  
 
 ## Step 5: Open the Main Folder  
-Once installation is complete, navigate to the main folder. You're all set! 🚀  
+Run the main.py folder located in the Main folder.
 
 ---  
 *this is my first html project so ik its bad 😭*   
