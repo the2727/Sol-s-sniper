@@ -1,0 +1,85 @@
+[
+    {
+        "name": "Sol's rng discord",
+        "id": "1186570213077041233",
+        "channelIds": [
+            "1282554696032194593",
+            "1282542323590496277",
+            "1282543762425516083"
+        ],
+        "triggers": [],
+        "categories": [
+            "1282540794309378088"
+        ],
+        "fullkeywords": [
+            {
+                "name": "Glitch",
+                "allowed": [
+                    "allowedGlitch(bot)"
+                ],
+                "disallowed": [
+                    "Glitchdisallowed(bot)",
+                    "disallowed(bot)"
+                ],
+                "toggleState": true
+            },
+            {
+                "name": "jester",
+                "allowed": [
+                    "allowedjester(bot)"
+                ],
+                "disallowed": [
+                    "Jesterdisallowed(bot)",
+                    "disallowed(bot)"
+                ],
+                "toggleState": true
+            },
+            {
+                "name": "Void coin",
+                "allowed": [
+                    "allowedVoidCoin(bot)"
+                ],
+                "disallowed": [
+                    "VoidCoinDisallowed(bot)",
+                    "disallowed(bot)"
+                ],
+                "toggleState": true
+            },
+            {
+                "name": "Dreamspace",
+                "allowed": [
+                    "allowedDreamSpace(bot)"
+                ],
+                "disallowed": [
+                    "disallowed(bot)",
+                    "DreamSpacedisallowed(bot)"
+                ],
+                "toggleState": true
+            }
+        ]
+    },
+    {
+        "name": "testing",
+        "id": "1271189425459826699",
+        "channelIds": [
+            "1317481841669836820"
+        ],
+        "triggers": [],
+        "categories": [
+            "1301562592220680202"
+        ],
+        "fullkeywords": [
+            {
+                "name": "glitch",
+                "allowed": [
+                    "allowedGlitch(bot)"
+                ],
+                "disallowed": [
+                    "disallowed(bot)",
+                    "Glitchdisallowed(bot)"
+                ],
+                "toggleState": true
+            }
+        ]
+    }
+]

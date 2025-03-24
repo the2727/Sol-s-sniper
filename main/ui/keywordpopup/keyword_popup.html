@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Selection</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Keyword List Management</h2>
+
+    <button onclick="addKeywordList()">➕ Add Keyword List</button>
+
+    <div class="navigation-buttons">
+        <button class="nav-button" onclick="navigate(-1)">◀</button>
+        <div id="full-keywordslist-container">
+            <!--container for keywords (who couldve have guessed) -->
+        </div>
+        <button class="nav-button" onclick="navigate(1)">▶</button>
+    </div>
+
+    <button id="save-all" onclick="saveAll()">💾 Save All</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
