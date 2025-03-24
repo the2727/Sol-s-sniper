@@ -6,4 +6,6 @@ Setup:
 *open main folder and you are good to go|
 
 
+this is my first html project so dont judge it too much pls 😭
+
 gl sniping
