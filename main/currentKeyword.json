@@ -1,0 +1,13 @@
+[
+    {
+        "name": "glitch",
+        "allowed": [
+            "allowedGlitch(bot)"
+        ],
+        "disallowed": [
+            "disallowed(bot)",
+            "Glitchdisallowed(bot)"
+        ],
+        "toggleState": true
+    }
+]

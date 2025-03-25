@@ -413,7 +413,7 @@ function editServer() {
     document.getElementById("new-server-name").value = selectedServer.name;
     document.getElementById("new-server-id").value = selectedServer.id;
     document.getElementById("new-channel-ids").value = selectedServer.channelIds.join(", ");
-    document.getElementById("new-category-ids").value = selectedServer.channelIds.join(", ");
+    document.getElementById("new-category-ids").value = selectedServer.categories.join(", ");
 
     triggersList = [...selectedServer.triggers];
     updateTriggersDisplay();

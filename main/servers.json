@@ -8,55 +8,8 @@
             "1282543762425516083"
         ],
         "triggers": [],
-        "categories": [
-            "1282540794309378088"
-        ],
-        "fullkeywords": [
-            {
-                "name": "Glitch",
-                "allowed": [
-                    "allowedGlitch(bot)"
-                ],
-                "disallowed": [
-                    "Glitchdisallowed(bot)",
-                    "disallowed(bot)"
-                ],
-                "toggleState": true
-            },
-            {
-                "name": "jester",
-                "allowed": [
-                    "allowedjester(bot)"
-                ],
-                "disallowed": [
-                    "Jesterdisallowed(bot)",
-                    "disallowed(bot)"
-                ],
-                "toggleState": true
-            },
-            {
-                "name": "Void coin",
-                "allowed": [
-                    "allowedVoidCoin(bot)"
-                ],
-                "disallowed": [
-                    "VoidCoinDisallowed(bot)",
-                    "disallowed(bot)"
-                ],
-                "toggleState": true
-            },
-            {
-                "name": "Dreamspace",
-                "allowed": [
-                    "allowedDreamSpace(bot)"
-                ],
-                "disallowed": [
-                    "disallowed(bot)",
-                    "DreamSpacedisallowed(bot)"
-                ],
-                "toggleState": true
-            }
-        ]
+        "categories": [],
+        "fullkeywords": []
     },
     {
         "name": "testing",
