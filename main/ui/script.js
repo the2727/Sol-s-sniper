@@ -359,10 +359,6 @@ function updateTriggerIDs(triggerName, inputField) {
     }
 }
 
-
-
-
-
 function updateTriggersDisplay() {
     const container = document.getElementById("added-triggers-container");
     container.innerHTML = ""; 

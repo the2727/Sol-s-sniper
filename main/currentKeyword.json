@@ -1,12 +1,45 @@
 [
     {
-        "name": "glitch",
+        "name": "Glitch",
         "allowed": [
             "allowedGlitch(bot)"
         ],
         "disallowed": [
             "disallowed(bot)",
             "Glitchdisallowed(bot)"
+        ],
+        "toggleState": true
+    },
+    {
+        "name": "Jester",
+        "allowed": [
+            "allowedjester(bot)"
+        ],
+        "disallowed": [
+            "disallowed(bot)",
+            "Jesterdisallowed(bot)"
+        ],
+        "toggleState": true
+    },
+    {
+        "name": "Void Coin",
+        "allowed": [
+            "allowedVoidCoin(bot)"
+        ],
+        "disallowed": [
+            "disallowed(bot)",
+            "VoidCoinDisallowed(bot)"
+        ],
+        "toggleState": true
+    },
+    {
+        "name": "DreamSpace",
+        "allowed": [
+            "allowedDreamSpace(bot)"
+        ],
+        "disallowed": [
+            "DreamSpacedisallowed(bot)",
+            "disallowed(bot)"
         ],
         "toggleState": true
     }

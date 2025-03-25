@@ -9,21 +9,9 @@
         ],
         "triggers": [],
         "categories": [],
-        "fullkeywords": []
-    },
-    {
-        "name": "testing",
-        "id": "1271189425459826699",
-        "channelIds": [
-            "1317481841669836820"
-        ],
-        "triggers": [],
-        "categories": [
-            "1301562592220680202"
-        ],
         "fullkeywords": [
             {
-                "name": "glitch",
+                "name": "Glitch",
                 "allowed": [
                     "allowedGlitch(bot)"
                 ],
@@ -32,7 +20,41 @@
                     "Glitchdisallowed(bot)"
                 ],
                 "toggleState": true
+            },
+            {
+                "name": "Jester",
+                "allowed": [
+                    "allowedjester(bot)"
+                ],
+                "disallowed": [
+                    "disallowed(bot)",
+                    "Jesterdisallowed(bot)"
+                ],
+                "toggleState": true
+            },
+            {
+                "name": "Void Coin",
+                "allowed": [
+                    "allowedVoidCoin(bot)"
+                ],
+                "disallowed": [
+                    "disallowed(bot)",
+                    "VoidCoinDisallowed(bot)"
+                ],
+                "toggleState": true
+            },
+            {
+                "name": "DreamSpace",
+                "allowed": [
+                    "allowedDreamSpace(bot)"
+                ],
+                "disallowed": [
+                    "DreamSpacedisallowed(bot)",
+                    "disallowed(bot)"
+                ],
+                "toggleState": true
             }
         ]
     }
+
 ]

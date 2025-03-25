@@ -50,7 +50,7 @@ def save_lists_to_json(data, filename):
         "DreamSpacedisallowed(bot)": data.get("Ddisallowed", []),
     }
 
-    formatted_data = [{"name": category, "ids": keywords} for category, keywords in categories.items()]
+    formatted_data = [{'name': category, "ids": keywords} for category, keywords in categories.items()]
 
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
@@ -62,7 +62,7 @@ def save_lists_to_json(data, filename):
         existing_data = []
 
 
-    existing_data = [entry for entry in existing_data if entry["name"] not in categories]
+    existing_data = [entry for entry in existing_data if entry['name'] not in categories]
 
 
     existing_data.extend(formatted_data)
@@ -173,7 +173,7 @@ class keywordAPI:
             try:
                 with open(KEYWORDS_FILE, "r", encoding="utf-8") as f:
                     json_data =  json.load(f)
-                    return [item["name"] for item in json_data]
+                    return [item['name'] for item in json_data]
             except json.JSONDecodeError:
                 print("Error: Could not parse keywords.json. Resetting file.")
                 return []
@@ -306,7 +306,6 @@ class API:
 
     def save_server(self, server):
         server["fullkeywords"] = self.load_all_current_keywords()
-        self.clear_all_unedited_keywords_data()
         if os.path.exists(SERVERS_FILE):
             try:
                 with open(SERVERS_FILE, "r", encoding="utf-8") as f:
@@ -372,7 +371,7 @@ class API:
             css_content = file.read()
 
 
-        keyword_list_options = ''.join(f'<option value="{item["name"]}">{item["name"]}</option>' for item in self.keywords)
+        keyword_list_options = ''.join(f'<option value="{item['name']}">{item['name']}</option>' for item in self.keywords)
 
         keyword_buttons = ''.join(f"""
             <div>
@@ -395,7 +394,7 @@ class API:
         self.selected_keywords = selected_keywords
 
     def get_selected_keywords(self):
-        return [{"name": kw, "status": status} for kw, status in self.selected_keywords.items()]
+        return [{'name': kw, "status": status} for kw, status in self.selected_keywords.items()]
 
     def close_window(self):
         webview.windows[1].destroy()
@@ -416,7 +415,7 @@ class API:
             try:
                 with open(KEYWORDS_FILE, "r", encoding="utf-8") as f:
                     json_data =  json.load(f)
-                    return [item["name"] for item in json_data]
+                    return [item['name'] for item in json_data]
             except json.JSONDecodeError:
                 print("Error: Could not parse keywords.json. Resetting file.")
                 return []
@@ -432,15 +431,15 @@ class API:
         return self.servers
 
     def add_keyword(self, keyword):
-        if any(k["name"] == keyword for k in self.keywords):
+        if any(k['name'] == keyword for k in self.keywords):
             return {"error": "Keyword already exists."}
 
-        self.keywords.append({"name": keyword, "ids": []})
+        self.keywords.append({'name': keyword, "ids": []})
         self.save_keywords(self.keywords)
         return {"success": True}
 
     def remove_keyword(self, keyword):
-        self.keywords = [k for k in self.keywords if k["name"] != keyword]
+        self.keywords = [k for k in self.keywords if k['name'] != keyword]
         self.save_keywords(self.keywords)
         return {"success": True}
     
@@ -457,7 +456,7 @@ class API:
 
     def update_keyword_ids(self, keyword, ids):
         for k in self.keywords:
-            if k["name"] == keyword:
+            if k['name'] == keyword:
                 k["ids"] = ids
                 self.save_keywords(self.keywords)
                 return {"success": True}
@@ -524,7 +523,7 @@ webview.create_window(
     frameless=True
 )
 
-webview.start()
+webview.start(debug=True)
 
 keywordslists = api.load_keywords()
 servers = api.load_servers()
@@ -653,9 +652,9 @@ def openLink(input_string):
 def isDisallowed(disallowedlist, m):
     for keywordsListName in disallowedlist:
         for keywordlist in keywordslists: 
-            if str(keywordsListName) == str(keywordlist["name"]):
+            if str(keywordsListName) == str(keywordlist['name']):
                 if any(word in m for word in keywordlist["ids"]):
-                    print(keywordlist["name"])
+                    print(keywordlist['name'])
                     print(m)
                     return True
     return False
@@ -665,7 +664,7 @@ def isAllowed(allowedlist,m):
 
     for keywordsListName in allowedlist:
         for keywordlist in keywordslists: 
-            if str(keywordsListName) == str(keywordlist["name"]):
+            if str(keywordsListName) == str(keywordlist['name']):
                 if any(word in m for word in keywordlist["ids"]): 
                     return True
     return False
@@ -702,15 +701,16 @@ async def on_message(m):
                                         newToast.text_fields = [f'{triggerName}']
                                         toaster.show_toast(newToast)
                             for fullkeyword in server['fullkeywords']:
-                                if isDisallowed(fullkeyword['disallowed'],message_content.lower()) == False:
-                                    if isAllowed(fullkeyword['allowed'],message_content.lower()):
-                                        openLink(message_content)
-                                        print(f"{fullkeyword["name"]} detected! from server: {server['name']}")
-                                        print(f"Message Content: {message_content}")
-                                        if(toast_notifications):
-                                            newToast.audio = ToastAudio(AudioSource.Reminder)
-                                            newToast.text_fields = [f'{fullkeyword["name"]}']
-                                            toaster.show_toast(newToast)
+                                if fullkeyword['toggleState'] == True:
+                                    if isDisallowed(fullkeyword['disallowed'],message_content.lower()) == False:
+                                        if isAllowed(fullkeyword['allowed'],message_content.lower()):
+                                            openLink(message_content)
+                                            print(f"{fullkeyword['name']} detected! from server: {server['name']}")
+                                            print(f"Message Content: {message_content}")
+                                            if(toast_notifications):
+                                                newToast.audio = ToastAudio(AudioSource.Reminder)
+                                                newToast.text_fields = [f'{fullkeyword['name']}']
+                                                toaster.show_toast(newToast)
                         else:
                             for trigger in server['triggers']:
                                 triggerName = trigger[0]
@@ -724,7 +724,7 @@ async def on_message(m):
                                     if isDisallowed(fullkeyword['disallowed'],message_content.lower()) == False:
                                         if isAllowed(fullkeyword['allowed'],message_content.lower()):
                                             print("THIS IS FROM A BLOCKED USER")
-                                            print(f"{fullkeyword["name"]} detected! from server: {server['name']}")
+                                            print(f"{fullkeyword['name']} detected! from server: {server['name']}")
                                             print(f"Message Content: {message_content}")
 
 
