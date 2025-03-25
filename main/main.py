@@ -705,11 +705,11 @@ async def on_message(m):
                                 if isDisallowed(fullkeyword['disallowed'],message_content.lower()) == False:
                                     if isAllowed(fullkeyword['allowed'],message_content.lower()):
                                         openLink(message_content)
-                                        print(f"{fullkeyword["name"]} detected! from server: {server['name']}")
+                                        print(f"{fullkeyword['name']} detected! from server: {server['name']}")
                                         print(f"Message Content: {message_content}")
                                         if(toast_notifications):
                                             newToast.audio = ToastAudio(AudioSource.Reminder)
-                                            newToast.text_fields = [f'{fullkeyword["name"]}']
+                                            newToast.text_fields = [f'{fullkeyword['name']}']
                                             toaster.show_toast(newToast)
                         else:
                             for trigger in server['triggers']:
@@ -724,7 +724,7 @@ async def on_message(m):
                                     if isDisallowed(fullkeyword['disallowed'],message_content.lower()) == False:
                                         if isAllowed(fullkeyword['allowed'],message_content.lower()):
                                             print("THIS IS FROM A BLOCKED USER")
-                                            print(f"{fullkeyword["name"]} detected! from server: {server['name']}")
+                                            print(f"{fullkeyword['name']} detected! from server: {server['name']}")
                                             print(f"Message Content: {message_content}")
 
 
