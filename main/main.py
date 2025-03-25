@@ -524,7 +524,7 @@ webview.create_window(
     frameless=True
 )
 
-webview.start(debug=True)
+webview.start()
 
 keywordslists = api.load_keywords()
 servers = api.load_servers()
