@@ -654,8 +654,6 @@ def isDisallowed(disallowedlist, m):
         for keywordlist in keywordslists: 
             if str(keywordsListName) == str(keywordlist['name']):
                 if any(word in m for word in keywordlist["ids"]):
-                    print(keywordlist['name'])
-                    print(m)
                     return True
     return False
  
